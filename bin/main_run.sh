@@ -27,6 +27,7 @@ nextflow run tumorOnlyONT.nf \
     --sv_pon annot/PoN_1000G_hg38_extended.tsv.gz   \
     --clair3_model ${MODEL_PATH}/models/${MODEL_NAME}  \
     --cpgs annot/hg38_cpg_cleaned.bed \
+    -with-report "reports/${ID}_lumos_report.html" \
     -resume \
     -cache TRUE
 

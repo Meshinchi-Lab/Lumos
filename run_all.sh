@@ -2,8 +2,11 @@
 
 set -eu
 
+source venv/bin/activate
+PROJ_DIR=$HOME/Documents/quintarelli_c && source $PROJ_DIR/.bash_profile
+
 # define input dataset path
-BASE="$HOME/Documents/quintarelli_c/benini_f/2025-07-24_WGS_Nanopore_T-ALL"
+BASE="$HOME/Documents/quintarelli_c/benini_f/Lumos"
 DATA_DIR="$BASE/data/wgs_pod5_bam/bare_metal"
 OUTDIR="/data/quintarelli_c/lumos/lumos_out"
 
@@ -17,8 +20,13 @@ do
 	echo $ID
 	if [[ ! -e $OUTDIR/$ID ]]
 	then
+		echo "processing $ID"
  		$BASE/bin/main_run.sh "$ID" "$BAM" "$OUTDIR"
+		echo "completed $ID"
 	fi
 done
+
+echo "completed"
+
 
 
