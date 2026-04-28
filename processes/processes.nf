@@ -7,7 +7,7 @@ nextflow.enable.dsl = 2
  */
 process alignMinimap2 {
 
-    container 'docker://quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1'
+    container 'quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1'
     cpus 28
     memory '128 GB'
     time '24.h'
@@ -34,7 +34,7 @@ process alignMinimap2 {
 
 process fastaIndex {
   tag "${reference?.name}"
-  container 'docker://quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1'
+  container 'quay.io/jmonlong/minimap2_samtools:v2.24_v1.16.1'
   cpus 1
   memory '4G'
   executor 'local'
@@ -50,7 +50,8 @@ process fastaIndex {
 }
     
 process callClair3 {
-    container 'docker://hkubal/clair3:v1.0.11'
+    container 'hkubal/clair3:v2.0.0'
+    //container 'hkubal/clair3:v1.0.11'
     cpus 28
     memory '128 G'
     time '24.h'
@@ -80,7 +81,7 @@ process callClair3 {
 
 process phaseLongphase {
 
-    container 'docker://mkolmogo/longphase:1.7.3'
+    container 'mkolmogo/longphase:1.7.3'
     cpus 10
     memory '64 G'
     time '4.h'
@@ -104,7 +105,7 @@ process phaseLongphase {
 }
 
 process haplotagWhatshap {
-    container 'docker://mkolmogo/whatshap:2.3'
+    container 'mkolmogo/whatshap:2.3'
     cpus 8
     memory '64 G'
     time '10.h'
@@ -129,7 +130,7 @@ process haplotagWhatshap {
         """
 }
 
-def MODKIT_DOCKER = 'docker://mkolmogo/modkit:0.4.1'
+def MODKIT_DOCKER = 'mkolmogo/modkit:0.4.1'
 
 process modkitDMR{
         container MODKIT_DOCKER
@@ -236,7 +237,7 @@ process modkitPileup{
             """     
 }
 
-def SEVERUS_DOCKER = 'docker://gokcekeskus/severus:v1_6'
+def SEVERUS_DOCKER = 'gokcekeskus/severus:v1_6'
 
 process severusTumorOnly {
     container SEVERUS_DOCKER
@@ -406,7 +407,7 @@ process wakhanCNATN {
 	"""
 }
 
-def DEEPSOMATIC_DOCKER = 'docker://google/deepsomatic:1.9.0'
+def DEEPSOMATIC_DOCKER = 'google/deepsomatic:1.9.0'
 
 process deepsomaticTumorOnly {
     def genomeName = "Sample"
