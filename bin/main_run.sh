@@ -27,9 +27,10 @@ cd $NXF_DIR
 echo "Running pipeline in Nextflow directory $NXF_DIR"
 
 ### Tumor-Only Run
-nextflow \
+nextflow -bg \
     -log $PROJ_DIR/reports/${ID}_lumos_nextflow.log \
-    run tumorOnlyONT.nf \
+    run Meshinchi-Lab/Lumos \
+    -r tall \
     -work-dir $NXF_DIR/work \
     -output-dir "$OUTDIR/$ID" \
     --aligned_input true \
