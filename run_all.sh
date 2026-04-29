@@ -3,11 +3,12 @@
 set -eu
 
 source venv/bin/activate
-PROJ_DIR=$HOME/Documents/quintarelli_c && source $PROJ_DIR/.bash_profile
+PROJ_BASE=$HOME/Documents/quintarelli_c && source $PROJ_BASE/.bash_profile
+
 
 # define input dataset path
-BASE="$HOME/Documents/quintarelli_c/benini_f/Lumos"
-DATA_DIR="$BASE/data/wgs_pod5_bam/bare_metal"
+PROJ_DIR="$HOME/Documents/quintarelli_c/benini_f/Lumos"
+DATA_DIR="$PROJ_DIR/data/wgs_pod5_bam/bare_metal"
 OUTDIR="/data/quintarelli_c/lumos/lumos_out"
 
 BAMS=$(find -L $DATA_DIR -name "*.aligned.bam")
