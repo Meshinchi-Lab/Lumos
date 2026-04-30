@@ -20,7 +20,7 @@ MODEL_PATH="/data/reference/CLAIR3"
 MODEL_NAME=r1041_e82_400bps_sup_v520
 
 # Define workflow execution directory
-NXF_DIR="/data/quintarelli_c/nxf_tmp/lumos/${PREFIX}"
+NXF_DIR="/data/quintarelli_c/nxf_tmp/lumos/${ID}"
 mkdir -p $NXF_DIR
 cd $NXF_DIR
 
@@ -47,6 +47,7 @@ nextflow -bg \
     -resume \
     -cache TRUE
 
+echo "completed $ID"
 
     
 

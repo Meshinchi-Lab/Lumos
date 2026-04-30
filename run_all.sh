@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -eu pipefail
 
 source venv/bin/activate
 PROJ_BASE=$HOME/Documents/quintarelli_c && source $PROJ_BASE/.bash_profile
@@ -22,8 +22,8 @@ do
 	if [[ ! -e $OUTDIR/$ID ]]
 	then
 		echo "processing $ID"
- 		$BASE/bin/main_run.sh "$ID" "$BAM" "$OUTDIR"
-		echo "completed $ID"
+ 		# tmux new -s $ID bash -c "$PROJ_DIR/bin/main_run.sh $ID $BAM $OUTDIR"
+		bash -c "$PROJ_DIR/bin/main_run.sh $ID $BAM $OUTDIR" &
 	fi
 done
 
