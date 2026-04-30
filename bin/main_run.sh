@@ -31,6 +31,7 @@ nextflow -bg \
     -log $PROJ_DIR/reports/${ID}_lumos_nextflow.log \
     run Meshinchi-Lab/Lumos \
     -r tall \
+    -main-script tumorOnlyONT.nf \
     -work-dir $NXF_DIR/work \
     -output-dir "$OUTDIR/$ID" \
     --aligned_input true \
