@@ -1,0 +1,25 @@
+- .git/
+- .github/
+- .vscode/
+
+- **work/
+- .nextflow/
+- **/nxf_tmp/**
+- images/
+- modules/
+- modules.json
+- main.nf
+- **.nf
+- main_run.sh
+- subworkflows/
+- test_data/
+- workflow_docs/
+
+- venv/
+- renv/
+
+- .Rproj.user/
+- *_cache/
+- **00_archive/
+- .Rbuildignore
+- .Rhistory
