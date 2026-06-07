@@ -290,7 +290,8 @@ process severusTumorNormal {
         """
 }
 
-def WAKHAN_DOCKER = 'mkolmogo/wakhan:0.4.3'
+def WAKHAN_DOCKER = 'quay.io/biocontainers/wakhan:0.4.2--pyhdfd78af_0'
+// def WAKHAN_DOCKER = 'mkolmogo/wakhan:0.4.3'
 def WAKHAN_BIN = 50000
 
 process wakhanHapcorrect {
