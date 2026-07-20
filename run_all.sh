@@ -7,10 +7,10 @@ PROJ_BASE=$HOME/Documents/quintarelli_c && source $PROJ_BASE/.bash_profile
 
 
 # define input dataset path
-PROJ_DIR="$HOME/Documents/quintarelli_c/benini_f/Lumos"
-DATA_DIR="$PROJ_DIR/data/wgs_pod5_bam/bare_metal"
-OUTDIR="/data/quintarelli_c/lumos/lumos_out"
-LOGDIR="$PROJ_DIR/logs"
+PROJ_DIR="${PROJ_DIR:-$HOME/Documents/quintarelli_c/benini_f/Lumos}"
+DATA_DIR="${DATA_DIR:-$PROJ_DIR/data/wgs_pod5_bam/bare_metal}"
+OUTDIR="${OUTDIR:-/data/quintarelli_c/lumos/lumos_out}"
+LOGDIR="${LOGDIR:-$PROJ_DIR/logs}"
 mkdir -p "$LOGDIR"
 
 BAMS=$(find -L "$DATA_DIR" -name "*.aligned.bam")
