@@ -22,10 +22,10 @@ do
 	[[ -z "$BAM" ]] && continue
 	ID=$(basename "$BAM" | sed -E "s/.aligned.bam//")
 
-	if [[ -e "$OUTDIR/$ID" ]]; then
-		echo "skipping $ID (output already present)"
-		continue
-	fi
+	# if [[ -e "$OUTDIR/$ID" ]]; then
+	# 	echo "skipping $ID (output already present)"
+	# 	continue
+	# fi
 
 	LOG="$LOGDIR/${ID}_main_run.log"
 	echo "processing $ID -> $LOG"

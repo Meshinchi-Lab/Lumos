@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-set -eou pipefail
+set -euo pipefail
 
 source ~/Documents/quintarelli_c/.bash_profile
 
-
+#OUTPUT=/data/network/172.16.125.32-Storage-P24/quintarelli_c/benini_f/T-ALL/2026-03-05_WGS_Nanopore_T-ALL_CNV
 INPUTS=${1}
 OUTDIR=${2}
 DESTINATION=$OUTDIR

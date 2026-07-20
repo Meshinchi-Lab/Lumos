@@ -1,7 +1,7 @@
 - .git/
 - .github/
 - .vscode/
-
+- **data/wgs_pod5_bam/
 - **work/
 - .nextflow/
 - **/nxf_tmp/**
