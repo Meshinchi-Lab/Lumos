@@ -33,8 +33,8 @@ nextflow \
     -work-dir "$NXF_DIR/work" \
     -output-dir "$OUTDIR/$ID" \
     --aligned_input true \
-    --aligned_tumor "$BAM/*.bam" \
-    --aligned_tumor_bai "$BAM/*.bai" \
+    --aligned_tumor "$BAM" \
+    --aligned_tumor_bai "${BAM}.bai" \
     --reference "$REF" \
     --vntr "$PROJ_DIR/annot/human_GRCh38_no_alt_analysis_set.trf.bed"   \
     --sv_pon "$PROJ_DIR/annot/PoN_1000G_hg38_extended.tsv.gz"   \

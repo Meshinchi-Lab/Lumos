@@ -13,17 +13,15 @@ OUTDIR="${OUTDIR:-/data/quintarelli_c/lumos/lumos_out}"
 LOGDIR="${LOGDIR:-$PROJ_DIR/logs}"
 mkdir -p "$LOGDIR"
 
-# BAMS=$(find -L "$DATA_DIR" -name "*.aligned.bam")
-BAMS=$(find -L "$DATA_DIR" -follow -name "bam_pass")
+BAMS=$(find -L "$DATA_DIR" -name "*.aligned.bam")
+# BAMS=$(find -L "$DATA_DIR" -follow -name "bam_pass")
 
 # Run one pipeline at a time. Each per-sample Nextflow workflow already requests
 # up to 28 cpus / 128 GB for individual processes (see processes/processes.nf),
 echo "$BAMS" | while IFS= read -r BAM
 do
 	[[ -z "$BAM" ]] && continue
-	# ID=$(basename "$BAM" | sed -E "s/.aligned.bam//")
-	ID=$(basename $(dirname $BAM ))
-
+	ID=$(basename "$BAM" | sed -E "s/.aligned.bam//")
 
 	LOG="$LOGDIR/${ID}_main_run.log"
 	echo "processing $ID -> $LOG"
