@@ -6,7 +6,6 @@ set -euo pipefail
 # source venv/bin/activate
 PROJ_DIR="$HOME/Documents/quintarelli_c/benini_f/Lumos"
 
-
 ID=$1
 BAM=$2
 OUTDIR=$3
@@ -45,7 +44,7 @@ nextflow \
     -with-trace "$PROJ_DIR/reports/${ID}_lumos_trace.txt" \
     -with-timeline "$PROJ_DIR/reports/${ID}_lumos_timeline.html" \
     -resume \
-    -cache TRUE
+    -latest
 
 echo "completed $ID"
 
