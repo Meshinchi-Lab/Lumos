@@ -5,17 +5,10 @@ set -euo pipefail
 
 source ~/Documents/quintarelli_c/.bash_profile
 
-#OUTPUT=/data/network/172.16.125.32-Storage-P24/quintarelli_c/benini_f/T-ALL/2026-03-05_WGS_Nanopore_T-ALL_CNV
+#OUTPUT=/data/network/172.16.125.32-Storage-P24/quintarelli_c/benini_f/T-ALL/2026-03-05_WGS_Nanopore_T-ALL_Lumos
 INPUTS=${1}
 OUTDIR=${2}
 DESTINATION=$OUTDIR
-
-# prom@PCA100514
-# jennysmith@sp-alphafold-ws:
-# DEST="/data/network/172.16.125.32-Storage-P24/quintarelli_c/benini_f/T-ALL/2025-09-29_WGS_Nanopore_basecalls_T-ALL"
-# INPUT="/home/prom/Documents/quintarelli_c/benini_f/2025-09-29_WGS_Nanopore_basecalls_T-ALL"
-# /data/network/172.16.125.32-Storage-P24/quintarelli_c/benini_f/T-ALL/
-# DEFAULT="/mnt/network_drives/storage-promethion/quintarelli_c/benini_f"
 
 
 echo "Syncing results from: $INPUTS"
