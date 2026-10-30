@@ -44,6 +44,7 @@ nextflow \
     -with-trace "$PROJ_DIR/reports/${ID}_lumos_trace.txt" \
     -with-timeline "$PROJ_DIR/reports/${ID}_lumos_timeline.html" \
     -resume \
+    -cache TRUE \
     -latest
 
 echo "completed $ID"
